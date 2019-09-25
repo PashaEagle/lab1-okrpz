@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: cryptobeer-telegram-bot
+spec:
+  type: LoadBalancer 
+  selector:
+    app: cryptobeer-telegram-bot
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
