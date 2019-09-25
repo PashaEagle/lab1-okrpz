@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cryptobeer-telegram-bot
+  labels:
+    app: cryptobeer-telegram-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cryptobeer-telegram-bot
+  template:
+    metadata:
+      labels:
+        app: cryptobeer-telegram-bot
+    spec:
+      containers:
+      - name: cryptobeer-telegram-bot
+        image: gcr.io/cryptobeer/cryptobeer-telegram-bot:1
+        ports:
+        - containerPort: 8080
