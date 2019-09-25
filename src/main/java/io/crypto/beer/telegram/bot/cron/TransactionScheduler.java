@@ -61,7 +61,8 @@ public class TransactionScheduler {
 			return;
 		}
 
-		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(schedulerProperties.getRequestUri() + walletProperties.getActor())
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(schedulerProperties.getRequestUri())
+				.queryParam("account", walletProperties.getActor())
 				.queryParam("filter", "transfer").queryParam("sort", 1)
 				.queryParam("skip", 0).queryParam("limit", 500);
 		String uriBuilder = builder.build().encode().toUriString();

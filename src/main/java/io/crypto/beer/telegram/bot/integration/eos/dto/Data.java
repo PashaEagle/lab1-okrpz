@@ -1,5 +1,6 @@
 package io.crypto.beer.telegram.bot.integration.eos.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Data {
 
 	@JsonProperty("from")
@@ -15,7 +17,7 @@ public class Data {
 	@JsonProperty("to")
     private String to;
 	
-	@JsonProperty("quantity")
+	@JsonProperty("amount")
     private String quantity;
 	
 	@JsonProperty("memo")
