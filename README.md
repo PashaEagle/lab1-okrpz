@@ -1,5 +1,5 @@
 # telegram-bot
 
+This project is about bot to simplify the interaction with EOS blockchain (testnet)
 
-asdfsd
-
+Update #2 of readme
